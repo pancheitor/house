@@ -3,3 +3,24 @@ PedroHouseBundle_homepage:
     defaults: { _controller: PedroHouseBundle:Page:index }
     requirements:
         _method:  GET
+
+PedroHouseBundle_huerto:
+    pattern: /huerto
+    defaults: { _controller: PedroHouseBundle:Page:huerto }
+
+PedroHouseBundle_casa:
+    pattern: /casa
+    defaults: { _controller: PedroHouseBundle:Page:casa }
+
+PedroHouseBundle_aguas:
+    pattern: /aguas
+    defaults: { _controller: PedroHouseBundle:Page:aguas }
+
+PedroHouseBundle_energia:
+    pattern: /energia
+    defaults: { _controller: PedroHouseBundle:Page:energia }
+
+PedroHouseBundle_configuracion:
+    pattern: /configuracion
+    defaults: { _controller: PedroHouseBundle:Page:configuracion }
+
