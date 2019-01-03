@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Humedad list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Sensor</th>
+                <th>Valor</th>
+                <th>Created</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for humedad in humedads %}
+            <tr>
+                <td><a href="{{ path('humedad_show', { 'id': humedad.id }) }}">{{ humedad.id }}</a></td>
+                <td>{{ humedad.sensor }}</td>
+                <td>{{ humedad.valor }}</td>
+                <td>{% if humedad.created %}{{ humedad.created|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('humedad_show', { 'id': humedad.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('humedad_edit', { 'id': humedad.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('humedad_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}

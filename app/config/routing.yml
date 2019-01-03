@@ -1,3 +1,15 @@
+pedro_house_luminosidad:
+    resource: "@PedroHouseBundle/Controller/LuminosidadController.php"
+    type:     annotation
+
+pedro_house_humedad:
+    resource: "@PedroHouseBundle/Controller/HumedadController.php"
+    type:     annotation
+
+pedro_house_temperatura:
+    resource: "@PedroHouseBundle/Controller/TemperaturaController.php"
+    type:     annotation
+
 pedro_house:
     resource: "@PedroHouseBundle/Resources/config/routing.yml"
     prefix:   /

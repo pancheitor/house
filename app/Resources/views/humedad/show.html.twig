@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Humedad</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ humedad.id }}</td>
+            </tr>
+            <tr>
+                <th>Sensor</th>
+                <td>{{ humedad.sensor }}</td>
+            </tr>
+            <tr>
+                <th>Valor</th>
+                <td>{{ humedad.valor }}</td>
+            </tr>
+            <tr>
+                <th>Created</th>
+                <td>{% if humedad.created %}{{ humedad.created|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('humedad_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('humedad_edit', { 'id': humedad.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

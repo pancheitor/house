@@ -7,6 +7,7 @@ $temp = htmlspecialchars( $_GET["temp"]);
 
 include "dbconfig.php";
 $sql = "INSERT INTO temperatura(sensor, valor, created) VALUES ($sensor,$temp, NOW())";
+echo "SQL: $sql";
 if(!$mysqli->query($sql)) {
  echo "Fallo la creacion del registro" . $mysqli->error; 
  }

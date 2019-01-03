@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Luminosidad list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Sensor</th>
+                <th>Valor</th>
+                <th>Created</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for luminosidad in luminosidads %}
+            <tr>
+                <td><a href="{{ path('luminosidad_show', { 'id': luminosidad.id }) }}">{{ luminosidad.id }}</a></td>
+                <td>{{ luminosidad.sensor }}</td>
+                <td>{{ luminosidad.valor }}</td>
+                <td>{% if luminosidad.created %}{{ luminosidad.created|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('luminosidad_show', { 'id': luminosidad.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('luminosidad_edit', { 'id': luminosidad.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('luminosidad_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}
