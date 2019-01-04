@@ -6,8 +6,8 @@
     <table>
         <tbody>
             <tr>
-                <th>Id</th>
-                <td>{{ temperatura.id }}</td>
+                <th>Created</th>
+                <td>{% if temperatura.created %}{{ temperatura.created|date('Y-m-d H:i:s') }}{% endif %}</td>
             </tr>
             <tr>
                 <th>Sensor</th>
@@ -17,11 +17,6 @@
                 <th>Valor</th>
                 <td>{{ temperatura.valor }}</td>
             </tr>
-            <tr>
-                <th>Created</th>
-                <td>{% if temperatura.created %}{{ temperatura.created|date('Y-m-d H:i:s') }}{% endif %}</td>
-            </tr>
-        </tbody>
     </table>
 
     <ul>

@@ -6,38 +6,19 @@
     <table>
         <thead>
             <tr>
-                <th>Id</th>
                 <th>Sensor</th>
-                <th>Valor</th>
-                <th>Created</th>
-                <th>Actions</th>
+                <th>Fecha</th>
+                <th>Temperatura ºC</th>
             </tr>
         </thead>
         <tbody>
         {% for temperatura in temperaturas %}
             <tr>
-                <td><a href="{{ path('temperatura_show', { 'id': temperatura.id }) }}">{{ temperatura.id }}</a></td>
                 <td>{{ temperatura.sensor }}</td>
-                <td>{{ temperatura.valor }}</td>
                 <td>{% if temperatura.created %}{{ temperatura.created|date('Y-m-d H:i:s') }}{% endif %}</td>
-                <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('temperatura_show', { 'id': temperatura.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('temperatura_edit', { 'id': temperatura.id }) }}">edit</a>
-                        </li>
-                    </ul>
-                </td>
+                <td>{{ temperatura.valor }}</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
-
-    <ul>
-        <li>
-            <a href="{{ path('temperatura_new') }}">Create a new entry</a>
-        </li>
-    </ul>
 {% endblock %}
