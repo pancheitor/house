@@ -1,9 +1,13 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Temperatura list</h1>
-
-    <table>
+<h1>Temperatura list</h1>
+<script type="text/javascript">
+    $(document).ready( function () {
+       $('#table_id').DataTable();
+    } );
+</script>
+    <table id="table_id" class="display">
         <thead>
             <tr>
                 <th>Sensor</th>
